@@ -85,7 +85,6 @@ class AdminServices {
       response: res,
       context: context,
       onSuccess: () {
-        ;
         for (int i = 0; i < jsonDecode(res.body).length; i++) {
           products.add(
             Product.fromJson(
