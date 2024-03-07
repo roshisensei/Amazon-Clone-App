@@ -1,4 +1,5 @@
 import 'package:amazon_app/constants/global_variables.dart';
+import 'package:amazon_app/features/admin/screen/order_screen.dart';
 import 'package:amazon_app/features/admin/screen/posts_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -21,11 +22,7 @@ class _AdminScreenState extends State<AdminScreen> {
         'Analytic Page',
       ),
     ),
-    const Center(
-      child: Text(
-        'Cart Page',
-      ),
-    ),
+    const OrdersScreen(),
   ];
 
   void updatePage(int page) {
