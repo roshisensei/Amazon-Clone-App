@@ -1,6 +1,8 @@
 // import packages
 const express =require('express');
 const mongoose =require('mongoose');
+require('dotenv').config();
+
 
 // import from other files
 const authRouter = require('./routes/auth');
@@ -10,8 +12,8 @@ const userRouter = require('./routes/user');
 
 // init
 const app = express();
-const port =3000;
-const DB = "mongodb+srv://chirag:mongo123@cluster0.mkvwjyq.mongodb.net/?retryWrites=true&w=majority"
+const port = process.env.port || 3000;
+const DB = process.env.DB;
 
 // middleware
 app.use(express.json())
@@ -19,6 +21,8 @@ app.use(authRouter);
 app.use(adminRouter);
 app.use(productRouter);
 app.use(userRouter);
+
+console.log(process.env);
 
 //connections
 mongoose.connect(DB).then(()=>{
