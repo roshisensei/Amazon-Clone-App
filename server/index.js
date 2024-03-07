@@ -22,7 +22,6 @@ app.use(adminRouter);
 app.use(productRouter);
 app.use(userRouter);
 
-console.log(process.env);
 
 //connections
 mongoose.connect(DB).then(()=>{
